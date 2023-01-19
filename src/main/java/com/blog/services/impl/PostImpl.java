@@ -54,7 +54,7 @@ public class PostImpl implements PostService{
 	@Override
 	public PostDTO updatePost(PostDTO post) {
 		
-		
+		System.out.println("adfghasgfhsdgfhgit");
 		return null;
 	}
 
