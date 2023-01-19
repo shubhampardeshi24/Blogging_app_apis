@@ -16,5 +16,4 @@ public class ResourcesNotFoundException extends RuntimeException{
 		this.fieldName = fieldName;
 		this.fieldValue = fieldValue;
 	}
-	
 }
