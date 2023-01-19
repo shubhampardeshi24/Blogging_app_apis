@@ -52,10 +52,16 @@ public class PostImpl implements PostService{
 	}
 
 	@Override
-	public PostDTO updatePost(PostDTO post) {
+	public PostDTO updatePost(PostDTO post, Integer postID) {
 		
-		System.out.println("adfghasgfhsdgfhgit");
-		return null;
+		Post oldPost = postRepo.findById(postID).orElseThrow(()->new ResourcesNotFoundException("post", "post id", postID));
+		
+		oldPost.setAddedDate(new Date());
+		oldPost.setContent(post.getContent());
+		oldPost.setImagename(post.getImageName());
+		
+		Post savedPost = postRepo.save(oldPost);
+		return mapper.map(savedPost,PostDTO.class );
 	}
 
 	@Override

@@ -11,7 +11,7 @@ public interface PostService {
 	PostDTO createPost(PostDTO post, Integer userID, Integer categoryID);
 	
 	//update
-	PostDTO updatePost(PostDTO post);
+	PostDTO updatePost(PostDTO post, Integer postID);
 	
 	//delete
 	void deletePost(Integer postID);
