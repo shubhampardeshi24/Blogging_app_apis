@@ -44,7 +44,7 @@ public class PostImpl implements PostService {
 				.orElseThrow(() -> new ResourcesNotFoundException("user", "user ID", userID));
 
 		Category category = categoryRepo.findById(categoryID)
-				.orElseThrow(() -> new ResourcesNotFoundException("user", "user ID", categoryID));
+				.orElseThrow(() -> new ResourcesNotFoundException("category", "category ID", categoryID));
 		Post postToBeAdded = mapper.map(post, Post.class);
 
 		postToBeAdded.setImagename("default.png");
@@ -114,7 +114,8 @@ public class PostImpl implements PostService {
 		List<Post> posts = postRepo.findByCategory(category);
 		List<PostDTO> postDTOList = posts.stream().map((post) -> mapper.map(post, PostDTO.class))
 				.collect(Collectors.toList());
-
+		
+		
 		return postDTOList;
 	}
 
