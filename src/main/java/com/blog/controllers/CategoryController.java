@@ -37,7 +37,6 @@ public class CategoryController {
 	}
 	
 	//update
-	
 	@PutMapping("/{categoryID}")//path uri variable
 	public ResponseEntity<CategoryDTO> updateCategory(@Valid  @RequestBody CategoryDTO dto, @PathVariable Integer categoryID )
 	{
